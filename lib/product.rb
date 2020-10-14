@@ -5,7 +5,7 @@ class Product
     @category = category
     @name = name
     @unit_price = unit_price
-    @quantity = quantity
+    @quantity = quantity.to_i
   end
 
 end
