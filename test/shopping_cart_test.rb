@@ -51,13 +51,12 @@ class ShoppingCartTest < Minitest::Test
   def test_if_a_cart_is_full
     # A shopping cart is full if its total number of products exceeds
     # its capacity.
-
     @cart.add_product(@product1)
     @cart.add_product(@product2)
     @cart.add_product(@product3)
 
     assert_equal false, @cart.is_full?
-    
+
     @cart.add_product(@product4)
 
     assert_equal true, @cart.is_full?
