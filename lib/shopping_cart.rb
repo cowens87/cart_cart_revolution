@@ -17,4 +17,10 @@ class ShoppingCart
     detalles[:capacity] = @capacity
     detalles
   end
+
+  def total_number_of_products
+    @products.sum do |product|
+      product.quantity
+    end
+  end
 end
