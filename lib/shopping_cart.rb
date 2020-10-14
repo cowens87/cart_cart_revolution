@@ -10,4 +10,11 @@ class ShoppingCart
   def add_product(product)
     @products << product
   end
+
+  def details
+    detalles = {}
+    detalles[:name] = @name
+    detalles[:capacity] = @capacity
+    detalles
+  end
 end
