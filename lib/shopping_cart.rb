@@ -43,4 +43,12 @@ class ShoppingCart
       product.quantity
     end.reverse
   end
+
+  def product_breakdown
+    breakdown = Hash.new {|hash_obj, key| hash_obj[key] = []}
+    @products.each do |product|
+      breakdown[product.category] << product
+    end
+    breakdown
+  end
 end
