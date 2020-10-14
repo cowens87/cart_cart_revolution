@@ -4,10 +4,13 @@ require "./lib/shopping_cart"
 require './lib/product'
 
 class ShoppingCartTest < Minitest::Test
+  #Iteration2
   def setup
     @cart = ShoppingCart.new("King Soopers", "30items")
     @product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
     @product2 = Product.new(:meat, 'chicken', 4.50, '2')
+    @product3 = Product.new(:paper, 'tissue paper', 1.25, '1')
+    @product4 = Product.new(:produce, 'apples', 0.99, '20')
   end
 
   def test_it_exists_and_has_attributes
@@ -34,5 +37,14 @@ class ShoppingCartTest < Minitest::Test
     @cart.add_product(@product2)
 
     assert_equal expected, @cart.details
+  end
+
+  # Iteration3
+  # A shopping cart is full if its total number of products exceeds its capacity.
+  def test_it_can_find_total_num_of_products
+    @cart.add_product(@product1)
+    @cart.add_product(@product2)
+    @cart.add_product(@product3)
+    assert_equal 13, @cart.total_number_of_products
   end
 end
